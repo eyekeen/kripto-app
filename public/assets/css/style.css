@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+footer {
+    background: #f4f4f4;
+    padding: 1rem;
+    text-align: center;
+}
+
+.crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.crypto-table th, .crypto-table td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.crypto-table th {
+    background: #f4f4f4;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.crypto-detail {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-item .label {
+    font-weight: bold;
+    display: inline-block;
+    width: 120px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.error-page {
+    text-align: center;
+    padding: 2rem;
+}
+
+#chart-container {
+    margin: 2rem 0;
+    height: 300px;
+    position: relative;
+}
+
+.crypto-chart {
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

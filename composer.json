@@ -1,0 +1,16 @@
+{
+    "name": "tarum/kripto-app",
+    "type": "project",
+    "authors": [
+        {
+            "name": "eyekeen",
+            "email": "block-code@mail.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+*/5 * * * * /usr/bin/php /path/to/your/project/update_crypto.php >> /path/to/your/project/storage/logs/crypto_update.log 2>&1
