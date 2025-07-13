@@ -167,23 +167,4 @@ class Cryptocurrency
             return [];
         }
     }
-
-    public function filterByMarketCap(float $minCap, float $maxCap): array
-    {
-        $sql = "SELECT * FROM cryptocurrencies 
-            WHERE market_cap BETWEEN :minCap AND :maxCap
-            ORDER BY market_cap DESC";
-
-        try {
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([
-                ':minCap' => $minCap,
-                ':maxCap' => $maxCap
-            ]);
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            error_log($e->getMessage());
-            return [];
-        }
-    }
 }

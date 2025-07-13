@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Services\CryptoApiService;
+use App\Console\UpdateCryptoDataCommand;
+
 
 class CryptocurrencyController extends Controller
 {
@@ -16,6 +18,10 @@ class CryptocurrencyController extends Controller
 
     public function index()
     {
+        
+        $command = new UpdateCryptoDataCommand();
+        $command->execute(false);
+
         $searchQuery = $_GET['search'] ?? '';
 
         if (!empty($searchQuery)) {
@@ -26,7 +32,6 @@ class CryptocurrencyController extends Controller
                 'searchQuery' => $searchQuery
             ]);
         } else {
-            // Обычная пагинация
             $page = max(1, (int)($_GET['page'] ?? 1));
             $perPage = 20;
             $cryptocurrencies = $this->apiService->getPaginatedData($page, $perPage);
@@ -44,11 +49,5 @@ class CryptocurrencyController extends Controller
                 'searchQuery' => $searchQuery
             ]);
         }
-    }
-
-    public function apiIndex()
-    {
-        $cryptocurrencies = $this->apiService->fetchTopCryptocurrencies(50);
-        $this->json($cryptocurrencies);
     }
 }

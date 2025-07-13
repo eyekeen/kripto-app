@@ -167,17 +167,6 @@ class CryptoApiService
         }
     }
 
-    public function filterByMarketCap(float $minCap, float $maxCap): array
-    {
-        try {
-            $data = $this->tryPrimaryApi(200); // Получаем больше записей для фильтрации
-            $this->updateDatabase($data);
-            return $this->cryptoModel->filterByMarketCap($minCap, $maxCap);
-        } catch (\Exception $e) {
-            error_log('Filter API Error: ' . $e->getMessage());
-            return $this->cryptoModel->filterByMarketCap($minCap, $maxCap);
-        }
-    }
 
     private function tryPrimaryApiSearch(string $query): array
     {

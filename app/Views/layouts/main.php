@@ -21,8 +21,5 @@
     <footer>
         <p>&copy; <?= date('Y') ?> Crypto Market Cap App</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/assets/js/chart.js"></script>
 </body>
 </html>

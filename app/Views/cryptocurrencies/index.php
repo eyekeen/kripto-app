@@ -11,21 +11,6 @@
             value="<?= \App\Core\View::escape($searchQuery ?? '') ?>">
         <button type="submit">Search</button>
     </form>
-
-    <!-- <form method="get" action="/" class="market-cap-filter">
-        <div>
-            <label>Market Cap Range:</label>
-            <input type="number" name="min_cap" placeholder="Min"
-                value="<?= \App\Core\View::escape($minCap ?? '') ?>">
-            <span>to</span>
-            <input type="number" name="max_cap" placeholder="Max"
-                value="<?= \App\Core\View::escape($maxCap ?? '') ?>">
-            <button type="submit">Filter</button>
-            <?php if ($minCap || $maxCap): ?>
-                <a href="/" class="clear-filter">Clear</a>
-            <?php endif; ?>
-        </div>
-    </form> -->
 </div>
 
 <table class="crypto-table">

@@ -5,11 +5,12 @@ use App\Services\CryptoApiService;
 
 class UpdateCryptoDataCommand
 {
-    public function execute()
+    public function execute($show_message = true)
     {
         $apiService = new CryptoApiService();
         $result = $apiService->fetchTopCryptocurrencies(50);
-        
-        echo "Successfully updated " . count($result) . " cryptocurrencies.\n";
+        if($show_message){
+            echo "Successfully updated " . count($result) . " cryptocurrencies.\n";
+        }
     }
 }
