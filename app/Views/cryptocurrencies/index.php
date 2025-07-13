@@ -1,6 +1,8 @@
-<?php $content = ob_start(); ?>
-
-<h2><?= htmlspecialchars($title) ?></h2>
+<?php
+/** @var array $cryptocurrencies */
+/** @var string $title */
+?>
+<h2><?= \App\Core\View::escape($title) ?></h2>
 
 <table class="crypto-table">
     <thead>
@@ -19,11 +21,11 @@
         <tr>
             <td><?= $index + 1 ?></td>
             <td>
-                <a href="/cryptocurrencies/<?= htmlspecialchars($crypto['ticker']) ?>">
-                    <?= htmlspecialchars($crypto['name']) ?>
+                <a href="/cryptocurrencies/<?= \App\Core\View::escape($crypto['ticker']) ?>">
+                    <?= \App\Core\View::escape($crypto['name']) ?>
                 </a>
             </td>
-            <td><?= htmlspecialchars($crypto['ticker']) ?></td>
+            <td><?= \App\Core\View::escape($crypto['ticker']) ?></td>
             <td>$<?= number_format($crypto['price'], 2) ?></td>
             <td class="<?= $crypto['change_24h'] >= 0 ? 'positive' : 'negative' ?>">
                 <?= number_format($crypto['change_24h'], 2) ?>%
@@ -34,6 +36,3 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-
-<?php $content = ob_get_clean(); ?>
-<?php include __DIR__ . '/../layouts/main.php'; ?>
