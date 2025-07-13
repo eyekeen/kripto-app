@@ -113,3 +113,77 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 0.5rem;
+}
+
+.page-link {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+
+.page-link:hover {
+    background: #f5f5f5;
+}
+
+.page-link.active {
+    background: #2c3e50;
+    color: white;
+    border-color: #2c3e50;
+}
+
+
+.filters {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.filters form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.filters input[type="text"],
+.filters input[type="number"] {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.filters button {
+    padding: 0.5rem 1rem;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background: #1a252f;
+}
+
+.market-cap-filter div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clear-filter {
+    color: #d9534f;
+    margin-left: 1rem;
+    text-decoration: none;
+}

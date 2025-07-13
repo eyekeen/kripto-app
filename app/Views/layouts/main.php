@@ -11,7 +11,6 @@
         <h1>Crypto Market Cap</h1>
         <nav>
             <a href="/">Home</a>
-            <a href="/cryptocurrencies">Top Cryptocurrencies</a>
         </nav>
     </header>
     

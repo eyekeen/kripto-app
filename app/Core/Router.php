@@ -17,8 +17,6 @@ class Router
     {
         // Явно прописываем главный маршрут
         $this->addRoute('GET', '/', 'CryptocurrencyController@index');
-        $this->addRoute('GET', '/cryptocurrencies', 'CryptocurrencyController@index');
-        $this->addRoute('GET', '/cryptocurrencies/([a-zA-Z0-9]+)', 'CryptocurrencyController@show');
     }
 
     public function addRoute(string $method, string $pattern, string $handler)
@@ -32,11 +30,11 @@ class Router
     public function dispatch()
     {
         $method = $_SERVER['REQUEST_METHOD'];
-        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); // Получаем только путь без параметров
         $uri = trim($uri, '/');
 
         // Для главной страницы
-        if ($uri === '' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($uri === '' && $method === 'GET') {
             $uri = '/';
         }
 
@@ -51,6 +49,7 @@ class Router
 
         $this->handleNotFound();
     }
+
 
     private function buildPattern(string $pattern): string
     {
